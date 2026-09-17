@@ -49,19 +49,21 @@ M=D+M
 
 //EX3
 
-//@2
-//D=M
-//(LOOP)
-//@END
-//D;JLE
-//@1
-//D=D-M
-//@T
-//D=D+1
-//@LOOP
-//(END)
-//@3
-//M=D
+@2
+D=M
+@1
+D=M
+(LOOP)
+@END
+D;JEQ
+@1
+D=D-M
+D=D-1
+0;JMP
+@LOOP
+(END)
+@3
+M=D
 
 
 
