@@ -30,18 +30,19 @@ M=D
 
 @S
 M=0
+A=0
 (LOOP)
 @i
 D=M
-@10
+@9
 D=D-A
 @END
 D;JGE
-@S
-D=M
 @i
 M=M+1
-D=D+M
+D=M
+@S
+M=D+M
 @LOOP
 0;JMP
 (END)
