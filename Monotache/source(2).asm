@@ -65,6 +65,20 @@ D=D-1
 @3
 M=D
 
+//EX4
+
+@16544    // SCREEN + (5 * 32)
+@SCREEN
+(LOOP)
+M=-1
+D=-1      
+@address
+A=M
+M=D   
+
+@LOOP
+0;JMP
+
 
 
 
