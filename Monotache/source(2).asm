@@ -67,17 +67,38 @@ M=D
 
 //EX4
 
-@16544    // SCREEN + (5 * 32)
-@SCREEN
-(LOOP)
-M=-1
-D=-1      
-@address
-A=M
-M=D   
+    @SCREEN
+    D=A       
+    @addr     // Stocke cette adresse dans une variable 'addr'
+    M=D
 
-@LOOP
-0;JMP
+    @8192     // Nombre total de mots à modifier (512 * 256 / 16)
+    D=A
+    @n        // Stocke ce compteur dans 'n'
+    M=D
+
+(LOOP)
+    @n
+    D=M
+    @END
+    D;JEQ      // Si n == 0, on quitte la boucle
+
+    @addr
+    A=M       // Va à l'adresse mémoire pointée par 'addr'
+    M=-1      // Rends les 16 pixels noirs (tous les bits à 1)
+
+    @addr
+    M=M+1     // Passe au mot mémoire suivant
+
+    @n
+    M=M-1     // Décrémente le compteur
+    
+    @LOOP
+    0;JMP     // Recommence la boucle
+
+(END)
+    @END
+    0;JMP 
 
 
 
