@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+/**
+ * Created by utilisateur on 28/08/2018.
+ */
+public class Ihm {
+    static Scanner sc = new Scanner(System.in);
+    public static int lireInt() {
+        int n= 0; //valeur à lire
+        boolean entierSaisi=false;
+        while (!entierSaisi) {
+            if (sc.hasNextInt()) {
+                n= sc.nextInt();
+                entierSaisi=true;
+
+            }
+            else {
+                System.out.println("La valeur saisie n'est pas un entier, ressaisir un entier");
+
+            }
+
+        }
+
+        sc.nextLine();
+        return n;
+    }
+    public static void main (String[] args) {
+
+        System.out.println("Saisir un entier");
+        System.out.println("Entier lu :" +lireInt());
+    }
+}
