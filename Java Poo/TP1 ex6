@@ -1,0 +1,31 @@
+public class Main {
+    public static void main(String[] args){
+        int n=1000;
+        boolean[] crible = new boolean[n];
+        crible[0] =  crible[1] = false;
+        for(int i = 2; i < 1000; ++i){
+            crible[i]=true;
+            System.out.print(crible[i]+" oui ");
+
+        }
+        for (int i = 2; i < 1000; i++){
+
+            if(crible[i]==true){
+                for(int j=i+1; j < crible.length; j++){
+                    if(j%i==0){
+                        crible[j]=false;
+                    }
+                }
+
+
+            }
+        }
+
+
+
+    }
+
+    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+    // to see how IntelliJ IDEA suggests fixing it.
+
+}
