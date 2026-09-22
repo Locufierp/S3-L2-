@@ -1,0 +1,33 @@
+import java.util.Arrays;
+
+public class TriSelection {
+    public static void main (String[] args) {
+
+        System.out.println("Saisir le nombre d'éléments ");
+        int nb = Ihm.lireInt();
+        int[] tab = new int[nb];
+
+        System.out.println("Saisie des éléments");
+        for (int i = 0; i < tab.length; i++) {
+            tab[i] = Ihm.lireInt();
+
+        }
+
+
+        //tri par insertion
+        int j;
+        int v;
+        for (int i=1;i<tab.length;i++){
+            j=i-1;
+            v=tab[i];
+            while (j>=0 && tab[j]>v){
+                tab[j+1]=tab[j];
+                j--;
+            }
+            tab[j+1]=v;
+
+        }
+        System.out.println(Arrays.toString(tab));
+
+    }
+}
