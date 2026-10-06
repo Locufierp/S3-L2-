@@ -1,0 +1,17 @@
+package ex3;
+
+
+public class Main {
+    public static void main(String[] args) {
+        int somme = 0;
+        for (string s : args){
+            somme += Integer.parseInt(s);
+        }
+        System.out.println("somme des arguments " + somme);
+
+        Somme = 0;
+        for ( int i = 0; i <args.length ; i++) {
+            somme += Integer.parseInt(args[i]);
+        }
+        System.out.println(" somme des arguments" + somme);
+        }
