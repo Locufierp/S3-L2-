@@ -1,1 +1,25 @@
+package ex4;
 
+public class main {
+    public static void main(String[] args) {
+        System.out.println("Veuillez saisir un entier superieur oun egal à 0");
+        if (in.hasNextInt()) {
+            n = in.nextInt();
+            if (n < 0) {
+                System.out.println("l'entier doit etre positif");
+
+
+            } else {
+                if (n < 0) ;
+                int somme = 0;
+                for (int i = 1; i <= n; i++) somme = somme + i;
+                System.out.println("la somme des " + n + "premiers entiers");
+                sc.next();
+
+
+            }
+        } else {
+            in.next();
+        }
+    }
+}
