@@ -1,0 +1,37 @@
+package ex4;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Veuillez saisir un entier supérieur ou égal à 0");
+
+        if (in.hasNextInt()) {
+
+            int n = in.nextInt();
+
+            if (n < 0) {
+                System.out.println("L'entier doit être positif ou égal à 0");
+
+            } else {
+
+                int somme = 0;
+
+                for (int i = 1; i <= n; i++) {
+                    somme = somme + i;
+                }
+
+                System.out.println("La somme des " + n
+                        + " premiers entiers est " + somme);
+            }
+
+        } else {
+            System.out.println("Vous devez saisir un entier.");
+        }
+
+        in.close();
+    }
+}
