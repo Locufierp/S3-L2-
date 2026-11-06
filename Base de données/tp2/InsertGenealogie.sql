@@ -30,3 +30,41 @@ insert into MereDe (numPersEnfant, numPersMere) values(11, 4);
 insert into MereDe (numPersEnfant, numPersMere) values(12, 4);
 insert into MereDe (numPersEnfant, numPersMere) values(13, 7);
 insert into MereDe (numPersEnfant, numPersMere) values(14, 9);
+
+SELECT * FROM Personne;
+
+SELECT * FROM PereDe;
+
+SELECT * FROM MereDe;
+
+//Q1
+
+SELECT nompers,prenompers FROM Personne JOIN
+((SELECT numperspere as num FROM PereDe
+GROUP BY numPerspere HAVING COUNT(*)>1)
+UNION
+(SELECT numpersmere as num FROM MereDe
+GROUP BY numPersmere HAVING COUNT(*)>1))T1
+ON T1.num = Personne.numPers;
+
+//Q2
+
+SELECT Distinct numPersMere,nomPers, prenomPers FROM MereDe JOIN Personne ON Personne.numPers = MereDe.numPersMere  Where numPersenfant IN 
+((SELECT distinct numPersMere FROM MereDe) UNION (SELECT distinct numPersPere FROM PereDe))
+;
+
+SELECT Distinct numPerspere,nomPers, prenomPers FROM pereDe JOIN Personne ON Personne.numPers = pereDe.numPerspere  Where numPersenfant 
+IN ((SELECT distinct numPersMere FROM MereDe) UNION (SELECT distinct numPersPere FROM PereDe))
+;
+
+//Q3
+
+SELECT nompers,prenompers FROM Personne JOIN PereDe ON Personne.numPers = pereDe.numPerspere 
+JOIN (SELECT numPers FROM Personne  WHERE prenomPers = 'Paul' and nompers = 'Durand')T1
+ON T1.numPers = perede.numpersenfant;
+
+//Q4
+
+SELECT nompers,prenompers  FROM MereDe JOIN Personne ON Personne.numPers = MereDe.numPersEnfant WHERE numpersmere IN (SELECT numpersmere FROM MereDe JOIN Personne ON Personne.numPers = MereDe.numPersEnfant Where nomPers = 'Dupont' and prenompers = 'Jeanne')
+AND (nomPers != 'Dupont' or prenompers != 'Jeanne')
+;
