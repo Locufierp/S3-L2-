@@ -66,6 +66,34 @@ SELECT * FROM ComposeDe;
 
 SELECT * FROM PossedeFCP;
 
+"""
+Ecrire les requêtes SQL Oracle répondant aux questions suivantes :
+1.
+Liste des clients (nom et prenom) classés par ordre alphabétique.
+2.
+Liste des actions (code, nom et valeur courante).
+3.
+Action la plus chère, la moins chère.
+4.
+Liste des actions possédées par Pierre Leloup.
+5.
+Gain (ou perte) total potentiel sur les actions de Pierre Leloup (valeur courante - prix achat).
+6.
+Gain (ou perte) potentiel par FCP.
+7.
+FCP le plus performant, le moins performant.
+8.
+Performance moyenne des FCP.
+9.
+Gain (ou perte) total potentiel de Pierre Leloup (actions + FCP).
+10. Client possédant le plus gros gain potentiel absolu (valeur).
+11. Client possédant le plus gros gain potentiel relatif (par rapport à la somme engagée).
+12. Client ayant le meilleur rendement annuel (vis-à-vis de la date d’ouverture de compte).
+13. Liste des FCP commencés en 2000.
+14. Code et nom du FCP qui se termine le premier.
+15. FCP elligible au PEA (comportant uniquement des actions de la région “Europe”).
+16. Clients dont toutes valeurs sont elligibles au PEA.
+"""
 
 //Q1
 SELECT nomCli,prenomCli FROM client ORDER BY nomcli ASC;
