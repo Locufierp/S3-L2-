@@ -5,7 +5,10 @@ import java.util.Scanner;
 public class ListeNuplets {
     private Nuplet[] lesNuplets;
 
-    private static class Nuplet implements Comparable<Nuplet> {
+    private static class Nuplet implements Comparable<Nuplet> { 
+        """
+        implements permet à une classe d'implémenter une interface.
+        """
         private int[] content;
 
         public Nuplet(int k) {
@@ -68,10 +71,29 @@ public class ListeNuplets {
                 }
             }
             return n1 - n2;
+
+            """
+            public class listeNuplets {
+            private static class Nuplet implements comparable<Nuplet> {
+            public int compareTo(Nuplet n) {
+                int[] contenu = n.content;
+                int i = 0;
+                while(i < content.length && i < contenu;length) {
+                    if (content[i] == contenu[i])
+                        i++;
+                    else
+                        return content[i] - contenu[i]
+                }
+                return content.length - contenu.length
+            """
         }
     }
 
     public ListeNuplets(int... lesTailles) {
+        """
+        En Java, les trois points ... correspondent à ce qu'on appelle les varargs (variable arguments).
+        Ils permettent à une méthode ou à un constructeur de recevoir un nombre variable de paramètres.
+        """
         lesNuplets = new Nuplet[lesTailles.length];
         for (int i = 0; i < lesTailles.length; i++) {
             lesNuplets[i] = new Nuplet(lesTailles[i]);
