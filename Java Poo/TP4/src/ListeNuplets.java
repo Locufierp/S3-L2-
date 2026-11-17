@@ -73,19 +73,29 @@ public class ListeNuplets {
             return n1 - n2;
 
             """
-            public class listeNuplets {
-            private static class Nuplet implements comparable<Nuplet> {
-            public int compareTo(Nuplet n) {
-                int[] contenu = n.content;
-                int i = 0;
-                while(i < content.length && i < contenu;length) {
-                    if (content[i] == contenu[i])
-                        i++;
-                    else
-                        return content[i] - contenu[i]
-                }
-                return content.length - contenu.length
-            """
+            public class ListeNuplets {
+
+    private static class Nuplet implements Comparable<Nuplet> {
+
+        public int compareTo(Nuplet n) {
+
+            int[] contenu = n.content;
+
+            int i = 0;
+
+            while (i < content.length && i < contenu.length) {
+
+                if (content[i] == contenu[i])
+                    i++;
+                else
+                    return content[i] - contenu[i];
+            }
+
+            return content.length - contenu.length;
+        }
+    }
+}
+        """
         }
     }
 
